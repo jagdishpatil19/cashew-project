@@ -6,6 +6,9 @@ $primaryColor: #3f3f4d;
 
 .main-div{
     background-color:  #3f3f4d;
+    position: sticky;
+    top: 0;
+    z-index:1;
 
 }
 body {
@@ -14,6 +17,9 @@ body {
     background-color: #e7e7e7;
  
   
+}
+a{
+  border: none;
 }
 .navbar__cart {
     position: relative;
