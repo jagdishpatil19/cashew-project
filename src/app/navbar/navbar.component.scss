@@ -1,20 +1,20 @@
-$primaryColor: #3f3f4d;
+$primaryColor: #678da175;
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
 .main-div{
-    background-color:  #3f3f4d;
-    position: sticky;
-    top: 0;
-    z-index:1;
+    background:linear-gradient(to right, #0a0a27, #7d7c7cf1),
+    // position: sticky;
+    // top: 0;
+    // z-index:1;
 
 }
 body {
     font-family: Roboto, sans-serif;
     font-size: 16px;
-    background-color: #e7e7e7;
+    background-color: #ffffff;
  
   
 }
@@ -23,7 +23,7 @@ a{
 }
 .navbar__cart {
     position: relative;
-    display: block;
+    // display: block;
     width: 30px;
     height: 30px;
     color: white;
@@ -64,14 +64,18 @@ a{
 }
 .menu{
     scale:1.8;
+    position: relative;
+    top: 65px;
 }
 .navbar {
 
   &__container {
     display: block;
-    background-color: $primaryColor;
+    background: 
+    linear-gradient(to right, #0a0a27, #7d7c7c), /* Top layer */
+    linear-gradient(to bottom, yellow, green); /* Bottom layer */
     padding: 0 15px;
-    box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.4);
+   
   }
 
   &__flex {
@@ -96,7 +100,7 @@ a{
     display: inline-block;
     width: 100px;
     height: 50px;
-    background: $primaryColor url('https://res.cloudinary.com/ajayrawat/image/upload/v1508734485/logo_zdwi2d.svg') no-repeat;
+    background:  transparent url('https://res.cloudinary.com/ajayrawat/image/upload/v1508734485/logo_zdwi2d.svg') no-repeat;
     background-size: contain;
     margin-right: 15px;
     vertical-align: middle;
@@ -106,6 +110,7 @@ a{
 
   &__search {
     display: inline-block;
+    
   }
 
   &__inputwithicon {
@@ -189,7 +194,7 @@ a{
       }
       a {
         display: block;
-        color: #c0c7da;
+        color: #f9fbff;
         text-decoration: none;
         font-family: inherit;
         font-size: 14px;
@@ -197,7 +202,8 @@ a{
         will-change: color;
 
         &:hover, &:hover {
-          color: white;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
         }
       }
     }
@@ -264,7 +270,7 @@ a{
     left: 0;
     margin: 0;
     padding: 0;
-    background-color: $primaryColor;
+    background-color: black;
     box-shadow: 3px 5px rgba(0,0,0,0.2);
 
     li {
@@ -340,10 +346,17 @@ a{
 }
 
 @media screen and (max-width: 440px) {
+ 
+  .firstCart{
+    position: relative;
+    left: 320px;
+    width: 0px;
+  }
   .navbar {
    
     &__hamburger {
       display: block;
+      margin-top: -15px;
     
       scale:0.8;
     }
@@ -353,30 +366,32 @@ a{
     }
   &__right{
     height:fit-content;
+    margin-top:-65px;
+    
   }
     &__toggler__label {
       position: relative;
-      bottom:43px;;
+      bottom:43px;
       display: block;
      
     }
     &__toggler__cart {
         position: relative;
-        bottom:78px;
-        right: 65px;
+        bottom:12px;
+      left: -330px;
         display: block;
        
-      display: block;
+     
      
     }
 
     &__products{
         position: relative;
-        right: 155px;
+        right: 128px;
     }
-    &__flewer{
+    &__flavour{
         position: relative;
-        right: 160px;
+        right: 133px;
     }
     &__toggler__input  {
       display: block;
@@ -389,10 +404,10 @@ a{
     &__links {
       display: none;
       flex-direction: column;
-
+      margin-top: 20px;
       li {
         a {
-          padding: 10px 10px 10px 0 !important;
+          padding: 5px 10px 10px 0 !important;
         }
       }
     }

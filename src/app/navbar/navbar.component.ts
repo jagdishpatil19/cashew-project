@@ -7,20 +7,21 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   productDropdown:boolean=false
-  flewerDrop:boolean=false
+  flavourDrop:boolean=false
   userDrop:boolean=false
   cartHide:boolean=true
   productDrop(){
     this.productDropdown=!this.productDropdown
+  
     if(this.productDropdown==true){
-      this.flewerDrop=false
+      this.flavourDrop=false
       this.userDrop=false
     }
   }
 
-  flewerDropdown(){
-    this.flewerDrop=!this.flewerDrop
-    if(this.flewerDrop==true){
+  flavourDropdown(){
+    this.flavourDrop=!this.flavourDrop
+    if(this.flavourDrop==true){
       this.productDropdown=false
       this.userDrop=false
     }
@@ -28,11 +29,22 @@ export class NavbarComponent {
   userDropdown(){
     this.userDrop=!this.userDrop
     if(this.userDrop==true){
-      this.flewerDrop=false
+      this.flavourDrop=false
       this.productDropdown=false
     }
   }
   cartToggle(){
  this.cartHide=false
+  }
+  hideDropDwoun(){
+    this.productDropdown=false
+  }
+  dropDowncancle(){
+    if(this.productDropdown==true || this.flavourDrop==true ||  this.userDrop==true){
+      this.productDropdown=false
+      this.flavourDrop=false
+      this.userDrop=false
+
+    }
   }
 }
