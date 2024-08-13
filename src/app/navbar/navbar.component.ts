@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +10,7 @@ export class NavbarComponent {
   flavourDrop:boolean=false
   userDrop:boolean=false
   cartHide:boolean=true
+ 
   productDrop(){
     this.productDropdown=!this.productDropdown
   
@@ -46,5 +47,15 @@ export class NavbarComponent {
       this.userDrop=false
 
     }
+  }
+
+
+  // search method impliment
+  
+  @Output() searchData=new EventEmitter
+
+  searchValue(value:any){
+    console.log(value,'this is searching value')
+    this.searchData.emit(value)
   }
 }

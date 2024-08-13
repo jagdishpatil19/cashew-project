@@ -84,7 +84,8 @@ body {
 			text-align: center;
 			width: 30px;
 			>i {
-				padding-top: 10px;
+				 position: relative;
+         top:5px;
 			}
 		}
 	}
@@ -95,6 +96,7 @@ body {
 			}
 		}
 	}
+ 
 	input {
     &[type="text"], &[type="email"], &[type="password"] {
       width: 100%;
@@ -360,4 +362,10 @@ body {
 	.remember_me {
 		padding-bottom: 20px;
 	}
+}
+
+.error{
+  color: red;
+  position: relative;
+  bottom: 10px;
 }

@@ -1,4 +1,4 @@
- 
+<app-navbar></app-navbar> 
 <div class="form_wrapper">
     <div class="form_container">
       <div class="title_container">
@@ -6,68 +6,84 @@
       </div>
       <div class="row clearfix">
         <div class="">
-          <form>
+          <form [formGroup]="signUpForm">
               <div class="row clearfix">
                 <div class="col_half">
-                  <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                    <input type="text" name="name" placeholder="First Name" />
+                  <div class="input_field"> <span><i aria-hidden="true" class="bi bi-person"></i></span>
+                    <input type="text" name="name" placeholder="First Name" formControlName="firstName"/>
                   </div>
+                  <span class="error" *ngIf="signUpForm.get('firstName')?.invalid || signUpForm.get('firstName')?.touched">Please Enter Your Name</span>
                 </div>
+
                 <div class="col_half">
-                  <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                    <input type="text" name="name" placeholder="Last Name" required />
+                  <div class="input_field"> <span><i aria-hidden="true" class="fa bi-person"></i></span>
+                    <input type="text" name="name" placeholder="Last Name" required  formControlName="lastName"/>
                   </div>
+                  <span class="error" *ngIf="signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched">Please Enter Your Name</span>
                 </div>
               </div>
-            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>
-              <input type="text" name="phone" placeholder="Phone No" required />
+
+            <div class="input_field"> <span><i aria-hidden="true" class="fa bi-phone"></i></span>
+              <input type="text" name="phone" placeholder="Phone No" required formControlName="phoneNo" maxlength="10"/>
             </div>
-            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-              <input type="email" name="email" placeholder="Email" required />
+            <span class="error" *ngIf="signUpForm.get('phoneNo')?.hasError('maxlength') && signUpForm.get('phoneNo')?.touched">Enter Valid Number</span>
+
+
+            <div class="input_field"> <span><i aria-hidden="true" class="fa bi-envelope"></i></span>
+              <input type="email" name="email" placeholder="Email" required  formControlName="email" />
             </div>
+            <span class="error" *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">Enter Valid Email Id</span>
+            
             <div class="input_field">
                 <label for="Date"><b>Date Of Birth</b></label>
-                <input type="Date" name="dob" class="form-control" id="Date" placeholder="Date Of Birth" required>
+                <input type="Date" name="dob" class="form-control" id="Date" placeholder="Date Of Birth" required  formControlName="dateOfBirth">
             </div>
             <div class="input_field radio_option">
-                <input type="radio" name="radiogroup1" id="rd1">
+                <input type="radio" value="male" name="radiogroup1" id="rd1" formControlName="gender">
                 <label for="rd1"><b>Male</b></label>
-                <input type="radio" name="radiogroup1" id="rd2">
-                <label for="rd2"><b>Female</b></label>
+                <input type="radio" value="female" name="radiogroup1" id="rd2" formControlName="gender">
+                <label for="rd2" ><b>Female</b></label>
                 </div>
                 <label for="State"><b>State</b></label>
                 <div class="input_field select_option">
                  
-                  <select class="form-control custom-select browser-default">
+                  <select class="form-control custom-select browser-default" formControlName="state" >
                     <option value="Maharastra" selected>Maharastra</option>
                     <option value="Karnataka">Karnataka</option>
                     <option value="Goa">Goa</option>
-                    <option value=""></option>
+                     
                 
                   </select>
                   <div class="select_arrow"></div>
                 </div>
 
                 <label for="City" ><b>City</b></label>
-                <input type="text" class="form-control input_field" name="city" id="city" placeholder="City Name" required>
-
+                <input type="text" class="form-control input_field" name="city" id="city" placeholder="City Name" required formControlName="city">
+                <span class="error" *ngIf="signUpForm.get('city')?.invalid && signUpForm.get('city')?.touched">Enter Your City</span>
+<br>
                 <label for="zip" ><b>Pin-Code</b></label>
-                <input type="zip" class="form-control input_field" name="Zip" id="zip" placeholder="Postal-Code." required>
-                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                  <input type="password" name="password" placeholder="Password" required />
+                <input type="zip" class="form-control input_field" name="Zip" id="zip" placeholder="Postal-Code." required formControlName="pinCode">
+                <span class="error"*ngIf="signUpForm.get('pinCode')?.invalid && signUpForm.get('pinCode')?.touched">Enter Pin Code</span>
+
+
+                <div class="input_field"> <span><i aria-hidden="true" class="bi bi-lock"></i></span>
+                  <input type="password" name="password" placeholder="Password" required formControlName="password" />
                 </div>
-                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                  <input type="password" name="password" placeholder="Re-type Password" required />
+                <span class="error" *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">Set Your Password</span>
+
+                
+                <div class="input_field"> <span><i aria-hidden="true" class="bi bi-lock"></i></span>
                 </div>
-              <div class="input_field checkbox_option">
-                  <input type="checkbox" id="cb1">
+                <input type="password" name="password" placeholder="Re-type Password" required formControlName="confirmPassword" />
+                <span class="error" *ngIf="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword')?.touched">Incorrect Your Password</span>
+                
+                
+                <div class="input_field checkbox_option">
+                  <input type="checkbox" id="cb1" >
                   <label for="cb1">I agree with terms and conditions</label>
               </div>
-              <div class="input_field checkbox_option">
-                  <input type="checkbox" id="cb2">
-                  <label for="cb2">I want to receive the newsletter</label>
-              </div>
-            <input class="button" type="submit" value="Register" />
+              
+            <input class="button" (click)="submit()" type="submit" value="Register" />
           </form>
         </div>
       </div>

@@ -6,9 +6,9 @@
           <div class="navbar__left">
             <span class="navbar__hamburger"></span>
            
-            <form class="navbar__search">
+            <form class="navbar__search" >
               <div class="navbar__inputwithicon">
-                <input type="text" name="" class="navbar__input" placeholder="Search my site...">
+                <input type="text"  #search class="navbar__input" placeholder="Search my site..." (input)="searchValue(search.value)">
                 <button type="submit" name="" class="navbar__button" value="">  </button>
               </div>
             </form>

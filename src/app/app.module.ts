@@ -13,6 +13,7 @@ import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BuyPageComponent,
     CartComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

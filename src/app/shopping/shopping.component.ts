@@ -105,4 +105,11 @@ this.router.navigateByUrl('buy')
   loginButton(){
 this.router.navigateByUrl('login')
   }
+
+  // searching proceess 
+
+  searchData:any=''
+  getSearchData(searchValue:any){
+this.searchData=searchValue
+  }
 }
