@@ -16,6 +16,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { BlogComponent } from './blog/blog.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { ProductDisplayComponent } from './product-display/product-display.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ShoppingComponent } from './shopping/shopping.component';
     SignUpComponent,
     SearchPipe,
     BlogComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductDisplayComponent
   ],
   imports: [
     BrowserModule,

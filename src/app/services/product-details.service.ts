@@ -7,5 +7,5 @@ export class ProductDetailsService {
 
   constructor() { }
  
-  getProduct:any=[]
+  getProduct:any;
 }

@@ -9,23 +9,29 @@ import { ProductDetailsService } from '../services/product-details.service';
 export class ProductDetailComponent {
 
 constructor(private productService:ProductDetailsService){}
- productDataStore:any=[ {productName:'Cashewbruch ',
-  productImage:'/assets/product1.webp',
-  productCost:352,
-  productWeight:"500g",
-  productFlavour:"Unflavoured",
-  id:1
-},
-{productName:'Cashewkerne',
-  productImage:'/assets/product2.webp',
-  productCost:300,
-  productWeight:"500g",
-  productFlavour:"Unflavoured",
-  id:2
-}]
-
+ productDataStore:any=[ ]
+productImg:any;
+productPrize:any;
+emptyProductHide:boolean=false
   ngOnInit(){
-    this.productDataStore=this.productService.getProduct
+    this.productDataStore.push(this.productService.getProduct)
     console.log(this.productDataStore,'this is store')
+    this.productDataStore.filter((ele:any)=>{
+    this.productImg=ele.productImage.img1
+    this.productPrize=ele.productCost
+    })
+    if(this.productDataStore.length==1){
+      this.emptyProductHide=true
+    }
+    
+  }
+
+  selectWeight(prize:any,multiplication:number){
+    this.productPrize=prize*multiplication
+    console.log(prize,'and ',multiplication  );
+    
+  }
+  imageDisplay(images:any){
+    this.productImg=images
   }
 }

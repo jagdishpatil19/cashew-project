@@ -55,7 +55,12 @@ body {
     background: #eee;
     padding: 3em;
     line-height: 1.5em; }
-  
+  button.size{
+ border: 1px solid black;
+  }
+  button.size:hover{
+background-color: aqua;
+  }
   @media screen and (min-width: 997px) {
     .wrapper {
       display: -webkit-box;

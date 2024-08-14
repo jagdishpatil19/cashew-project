@@ -24,6 +24,7 @@
             <option value="kakao">kakao</option>
             <option value="vanille">vanille</option>
             <option value="curry">curry</option>
+            <option value="kernmehl">kernmehl</option>
           </select>
         </div>
       </section>
@@ -31,7 +32,7 @@
       
     <div class="row" >
         <div  class="col-4" *ngFor="let products of latestProduct |search:searchData">
-            <img (click)="producDetails(products)"  src={{products.productImage}} alt="">
+            <img (click)="producDetails(products)"  src={{products.productImage.img1}} alt="">
             <h4>{{products.productName}}</h4>
             <div class="rating">
                 <i class="fa fa-star" ></i>
@@ -41,7 +42,7 @@
                 <i class="fa fa-star-half-o" ></i>
                 
             </div>
-            <p><b>{{products.productCost|currency:'INR'}} </b>/ {{products.productWeight}}</p>
+            <p><b>{{products.productCost|currency:'INR'}} </b>/ {{products.productWeight.first}}</p>
             <p>{{products.productFlavour}}</p>
              <p>
                 <button  (click)="addToCart()" class="add-to-cart">

@@ -1,21 +1,15 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
- 
 import { ProductDetailsService } from '../services/product-details.service';
-import { ApiCallService } from '../services/api-call.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-shopping',
-  templateUrl: './shopping.component.html',
-  styleUrls: ['./shopping.component.scss']
+  selector: 'app-product-display',
+  templateUrl: './product-display.component.html',
+  styleUrls: ['./product-display.component.scss']
 })
-export class ShoppingComponent {
- constructor(private router:Router , private apiCall:ApiCallService, private productService:ProductDetailsService){}
+export class ProductDisplayComponent {
 
-loginGetData:any[]=[]
-id:any;
- loginToggle:boolean=false
-
+constructor(private productService:ProductDetailsService , private router:Router){}
 
   latestProduct:any=[
     {productName:'Cashewbruch ',
@@ -23,6 +17,7 @@ id:any;
       productCost:352,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Unflavoured",
+      discount:10,
       id:1
     },
     {productName:'Cashewkerne',
@@ -30,6 +25,7 @@ id:any;
       productCost:300,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Unflavoured",
+      discount:12,
       id:2
     },
     {productName:'Cashewbruch - afrikanischer',
@@ -37,6 +33,7 @@ id:any;
       productCost:310,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Unflavoured",
+      discount:20,
       id:3
     },
     {productName:'Cashew Vanille',
@@ -44,6 +41,7 @@ id:any;
       productCost:400,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Flavoured",
+      discount:12,
       id:4
     },
     {productName:'Kakao Cashews',
@@ -52,7 +50,7 @@ id:any;
       productCost:380,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Flavoured",
-
+      discount:20,
       id:5
     },
     {productName:'Premium Cashewkernmehl',
@@ -61,6 +59,7 @@ id:any;
       productCost:362,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Flavoured",
+      discount:22,
       id:6
     },
     {productName:'Cashew Curry - Masala',
@@ -69,56 +68,13 @@ id:any;
       productCost:352,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Flavoured",
+      discount:10,
       id:7
     },
   ]
 
-ngOnInit(){
-  this.loginGetData= this.apiCall.loginSuccessData
-  this.id=this.loginGetData.length
-  console.log(this.id,"this is login data")
-  
-}
-
-  producDetails(product:any){
-  this.productService.getProduct=product 
- this.router.navigateByUrl('product-detail')
-  }
-
-  //addcart button
-
- 
-  addToCart(){
-    if(this.id==1){
-      document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', e => {
-            button.classList.toggle('added');
-        });
-    }); 
-    
-  }
-  
-  else{
-    this.loginToggle=true
-  }
-
-  
-  }
-
-  // login popup toggle 
-  cancleButton(){
-    this.loginToggle=false
-  }
-
-  loginButton(){
-this.router.navigateByUrl('login')
-  }
-
-  // searching proceess 
-
-  searchData:any=''
-  getSearchData(searchValue:any){
-this.searchData=searchValue
-  }
- 
+  producDetailsShow(product:any){
+    this.productService.getProduct=product 
+   this.router.navigateByUrl('product-detail')
+    }
 }
