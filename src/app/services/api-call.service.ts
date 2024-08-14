@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ApiCallService {
   
   constructor() { }
-  loginData:any ={userName:'jagdish',password:123456}
+  loginData:any ={userName:1234567890 ,password:123456}
   
   loginSuccessData:any;
 

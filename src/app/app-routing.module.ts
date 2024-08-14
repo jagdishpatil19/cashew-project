@@ -7,6 +7,8 @@ import { BuyPageComponent } from './buy-page/buy-page.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { BlogComponent } from './blog/blog.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path:'buy',component:BuyPageComponent},
   {path:'cart',component:CartComponent},
   {path:'login',component:LoginComponent},
-  {path:'signUp',component:SignUpComponent}
+  {path:'signUp',component:SignUpComponent},
+  {path:'blog',component:BlogComponent},
+  {path:'product-detail',component:ProductDetailComponent}
 ];
 
 @NgModule({

@@ -1,8 +1,25 @@
- \
+
  <app-navbar></app-navbar>
+<!-- login successs popup  -->
+
+ 
+  <div *ngIf="loginSucessPopUp" class="thanku-pop">
+    <div class="sucess">
+     
+      <i class="bi bi-check-lg check"></i>
+      <h3>Sucess!</h3>
+      <p>Thank you for validating the access 
+      and sharing your details. </p>
+      <a routerLink="/shopping" type="button" class="pop-btn">Continue Shopping</a>
+    </div>
+  </div>
+  
+ 
+
+
 <!-- Login 9 - Bootstrap Brain Component -->
-<section class="bg-primary py-3 py-md-5 py-xl-8">
-  <div class="container">
+<section *ngIf="loginFormHide" class="bg-primary py-3 py-md-5 py-xl-8">
+  <div class="container ">
     <div class="row gy-4 align-items-center">
       <!-- <div class="col-12 col-md-6 col-xl-7">
         <div class="d-flex justify-content-center text-bg-primary">
@@ -33,9 +50,10 @@
             <form [formGroup]="loginForm">
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
-                  <div class="form-floating mb-1">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required formControlName="userName">
-                    <label for="email" class="form-label">Email</label>
+                  <div class="form-floating mb-4">
+                    <input type="number" class="form-control"   placeholder=""    required pattern="[0-9]{10}" formControlName="userName">
+                    <label for="email" class="form-label">Phone No</label>
+                     <span style="color: red;"  *ngIf="loginForm.get('userName')?.touched && loginForm.get('userName')?.invalid || loginForm.get('userName')?.hasError('maxlength')">Please Enter Number</span>
                   </div>
                 </div>
                 <div class="col-12">
@@ -54,8 +72,9 @@
                 </div>
                 <div class="col-12">
                   <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" type="submit" (click)="submit()">Log in now</button>
+                    <button [disabled]="loginForm.invalid" class="btn btn-primary btn-lg" type="submit" (click)="submit()">Log in now</button>
                   </div>
+                  <span *ngIf="loginError" style="color: red;"> Incorrect Details Please Try Again</span>
                 </div>
               </div>
             </form>
@@ -64,6 +83,7 @@
               <div class="col-12">
                 <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end mt-4">
                   <a  >Forgot password</a>
+                  
                 </div>
               </div>
             </div>

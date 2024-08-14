@@ -11,11 +11,28 @@
         
 
 <!----- feature proudct --------->
+
+
+
 <div class="samall-container">
-    <h2 class="title">Fatured Product </h2>
+    <h2 class="title">Latest product </h2>
+    <section class="cont">
+       
+        <div class="dropdown dropdown-dark">
+          <select name="two" #two class="dropdown-select" (click)="getSearchData(two.value)">
+            <option value="" >Flavours…</option>
+            <option value="kakao">kakao</option>
+            <option value="vanille">vanille</option>
+            <option value="curry">curry</option>
+          </select>
+        </div>
+      </section>
+
+      
     <div class="row" >
         <div  class="col-4" *ngFor="let products of latestProduct |search:searchData">
-            <img (click)="redirectBuyPage()"  src={{products.productImage}} alt="">
+            <img (click)="producDetails(products)"  src={{products.productImage}} alt="">
+            <h4>{{products.productName}}</h4>
             <div class="rating">
                 <i class="fa fa-star" ></i>
                 <i class="fa fa-star" ></i>
@@ -24,7 +41,6 @@
                 <i class="fa fa-star-half-o" ></i>
                 
             </div>
-            <h4>{{products.productName}}</h4>
             <p><b>{{products.productCost|currency:'INR'}} </b>/ {{products.productWeight}}</p>
             <p>{{products.productFlavour}}</p>
              <p>

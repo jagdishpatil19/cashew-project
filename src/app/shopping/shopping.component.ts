@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiCallService } from '../api-call.service';
+ 
+import { ProductDetailsService } from '../services/product-details.service';
+import { ApiCallService } from '../services/api-call.service';
 
 @Component({
   selector: 'app-shopping',
@@ -8,7 +10,7 @@ import { ApiCallService } from '../api-call.service';
   styleUrls: ['./shopping.component.scss']
 })
 export class ShoppingComponent {
- constructor(private router:Router ,private apiCall:ApiCallService){}
+ constructor(private router:Router , private apiCall:ApiCallService, private productService:ProductDetailsService){}
 
 loginGetData:any[]=[]
 id:any;
@@ -71,10 +73,12 @@ ngOnInit(){
   this.loginGetData= this.apiCall.loginSuccessData
   this.id=this.loginGetData.length
   console.log(this.id,"this is login data")
+  
 }
 
-  redirectBuyPage(){
-this.router.navigateByUrl('buy')
+  producDetails(product:any){
+  this.productService.getProduct=product 
+ this.router.navigateByUrl('product-detail')
   }
 
   //addcart button
@@ -112,4 +116,5 @@ this.router.navigateByUrl('login')
   getSearchData(searchValue:any){
 this.searchData=searchValue
   }
+ 
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,8 @@ export class NavbarComponent {
   userDrop:boolean=false
   cartHide:boolean=true
  
+
+  constructor(private router:Router){}
   productDrop(){
     this.productDropdown=!this.productDropdown
   
@@ -57,5 +60,6 @@ export class NavbarComponent {
   searchValue(value:any){
     console.log(value,'this is searching value')
     this.searchData.emit(value)
+  
   }
 }
