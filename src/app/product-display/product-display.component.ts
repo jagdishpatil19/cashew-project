@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class ProductDisplayComponent {
 
 constructor(private productService:ProductDetailsService , private router:Router){}
-
+  
   latestProduct:any=[
     {productName:'Cashewbruch ',
       productImage:{img1:'/assets/product1.webp',img2:'/assets/cashewbruchno12.webp',img3:'/assets/cashewbruchno13.webp',img4:'/assets/cashewbruchno14.webp'},
@@ -73,6 +73,7 @@ constructor(private productService:ProductDetailsService , private router:Router
     },
   ]
 
+ 
   producDetailsShow(product:any){
     this.productService.getProduct=product 
    this.router.navigateByUrl('product-detail')

@@ -17,6 +17,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { ProductDisplayComponent } from './product-display/product-display.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProductDisplayComponent } from './product-display/product-display.compo
     SearchPipe,
     BlogComponent,
     ProductDetailComponent,
-    ProductDisplayComponent
+    ProductDisplayComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

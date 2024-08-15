@@ -61,6 +61,9 @@ body {
   button.size:hover{
 background-color: aqua;
   }
+  button.size:focus{
+background-color: rgb(0, 200, 255);
+  }
   @media screen and (min-width: 997px) {
     .wrapper {
       display: -webkit-box;

@@ -40,9 +40,9 @@
 						<h4 class="price">current price: <span>{{ productPrize|currency:'INR'}}</span></h4>
 						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
 						<h5 class="sizes">Weight:
-							<button (click)="selectWeight(product.productCost,1)"  class="size" data-toggle="tooltip" title="small">{{product.productWeight.first}}</button>
-							<button (click)="selectWeight(product.productCost,2)" class="size" data-toggle="tooltip" title="small">{{product.productWeight.second}}</button>
-							<button (click)="selectWeight(product.productCost,4)" class="size" data-toggle="tooltip" title="small">{{product.productWeight.third}}</button>
+							<button aria-selected="true" (click)="selectWeight(product.productCost,1)"  class="size" data-toggle="tooltip" title="small">{{product.productWeight.first}}</button>
+							<button aria-selected="false" (click)="selectWeight(product.productCost,2)" class="size" data-toggle="tooltip" title="small">{{product.productWeight.second}}</button>
+							<button aria-selected="false" (click)="selectWeight(product.productCost,4)" class="size" data-toggle="tooltip" title="small">{{product.productWeight.third}}</button>
  
 						</h5>
 					 

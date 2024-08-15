@@ -9,6 +9,76 @@ body {
 	font-size: 14px;
 	// background-color:linie;
 }
+//  signUp success popup 
+
+.thanku-pop .sucess {
+  width: 500px;
+  background: #caf6ff;
+  border-radius: 6px;
+  text-align: center;
+  padding-top: 40px;
+  box-shadow: 0px 1px 190px 10px rgba(0, 0, 0,.2);
+}
+.thanku-pop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+.sucess i.check {
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: green;
+  -webkit-text-stroke: 2px #f8f8f7;
+  border: dashed 4px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.sucess h3 {
+  font-size: 24px;
+  color: green;
+  margin-bottom: 15px;
+}
+.sucess p {
+  font-size: 18px;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.sucess a.pop-btn {
+  background: #00861b;
+  display: inline-flex;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  margin-bottom: -14px;
+  align-items: center;
+  justify-content: center;
+text-decoration: none;
+}
+
+
+// form box and inputs 
+.button{
+  width: 100%;
+  background-color: #f5ba1a;
+  border: 1px solid black;
+}
+.button:hover{
+  width: 100%;
+  background-color: #ff9900;
+}
 .clearfix {
 	&:after {
 		content: "";
@@ -367,5 +437,5 @@ body {
 .error{
   color: red;
   position: relative;
-  bottom: 10px;
+  bottom: 8px;
 }
