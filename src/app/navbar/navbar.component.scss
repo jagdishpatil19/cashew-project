@@ -230,8 +230,6 @@ a{
     display: inline-block;
     width: 13px;
     height: 13px;
-     position: relative;
-     top: 7px;
     color: #ffffff;
     font-size: 25px;
 }
@@ -347,6 +345,13 @@ a{
 
 @media screen and (max-width: 440px) {
  
+ .dropdown-menu{
+ 
+  position: static;
+  box-shadow: none;
+  width: 100%;
+  background-color: darken($primaryColor, 5%);
+ }
   .firstCart{
     position: relative;
     left: 320px;
@@ -445,3 +450,36 @@ a{
 }
 
 // drop dwon
+.dropdown-menu{
+  background-color: black;
+  position: absolute;
+  margin-top: 20px;
+    width: 175px;
+    height: auto;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color:rgb(3 43 96);
+    
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.2);
+
+}
+.dropdown-menu li{
+  margin-bottom: 5px;
+  // margin-left: 5px;
+}
+.user.btn-group .dropdown-toggle::after {
+  display: none;
+}
+.user.btn-group .dropdown-toggle.dropdown-menu{
+  margin-left: 106px;
+
+}
+.dropdown-item {
+  display: block; /* Ensure each item is displayed as a block */
+  width: 100px; /* Make sure each item spans the entire width */
+  white-space: nowrap; /* Prevent text from wrapping to ensure items stay on one line */
+}
+
+ 
