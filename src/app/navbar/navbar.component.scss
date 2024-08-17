@@ -197,13 +197,19 @@ a{
         color: #f9fbff;
         text-decoration: none;
         font-family: inherit;
-        font-size: 14px;
+        font-size:15px;
+        font-weight: 500;
         transition: color 200ms linear;
         will-change: color;
 
-        &:hover, &:hover {
-          color: rgb(255, 255, 255);
-          font-weight: bold;
+        &:hover, &:focus {
+          color: rgb(255, 126, 6);
+          
+        }
+        i{
+          &:hover,&:focus{
+            color: rgb(255, 123, 0);
+          }
         }
       }
     }
@@ -467,7 +473,11 @@ a{
 }
 .dropdown-menu li{
   margin-bottom: 5px;
-  // margin-left: 5px;
+  margin-left: 10px;
+  
+}
+.dropdown-menu li a{
+ font-weight: 500;
 }
 .user.btn-group .dropdown-toggle::after {
   display: none;
