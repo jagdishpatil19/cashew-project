@@ -8,6 +8,6 @@ export class ApiCallService {
   constructor() { }
   loginData:any ={userName:1234567890 ,password:123456}
   
-  loginSuccessData:any;
+  loginSuccessData:any[]=[]
 
 }

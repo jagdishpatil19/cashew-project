@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+ 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signUp',component:SignUpComponent},
   {path:'blog',component:BlogComponent},
-  {path:'product-detail',component:ProductDetailComponent}
+  {path:'product-detail',component:ProductDetailComponent},
+ 
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiCallService } from '../services/api-call.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,10 +10,26 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   
   cartHide:boolean=true
- 
+  loginToggleButton:boolean=true
+  logoutToggleButton:boolean=false
 
-  constructor(private router:Router){}
+  constructor(private router:Router,private apiCall:ApiCallService){}
    
+
+  ngOnInit(){
+    const loggedDataFromLocal= localStorage.getItem('loggedDataStore') // data get from local storage
+    if(loggedDataFromLocal){
+       this.loginToggleButton=false
+       this.logoutToggleButton=true
+    }
+   
+    else{
+      this.loginToggleButton=true
+      this.logoutToggleButton=false
+    }
+    console.log(loggedDataFromLocal, 'this is local storage from navbar');
+    
+  }
   cartToggle(){
  this.cartHide=false
   }
@@ -27,5 +44,11 @@ export class NavbarComponent {
     console.log(value,'this is searching value')
     this.searchData.emit(value)
   
+  }
+
+  //this is logout proceess
+  logout(){
+   localStorage.removeItem('loggedDataStore')
+   this.router.navigateByUrl('home')
   }
 }

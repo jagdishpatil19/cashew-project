@@ -55,10 +55,10 @@
             <li class="btn-group user">
               <a type="button" class="dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person navbar__user"></i></a>
               <ul class="dropdown-menu  dropdown-menu-dark ">
-                <li><a class="dropdown-item"  > <i class="bi bi-person-fill-gear"></i>&nbsp;Account</a></li>
+                <li ><a class="dropdown-item"  > <i class="bi bi-person-fill-gear"></i>&nbsp;Account</a></li>
                 <li><a class="dropdown-item"  > <i class="bi bi-cart4"></i>&nbsp;Orders</a></li>
-                <li><a routerLink="/login" class="dropdown-item" > <i class="bi bi-box-arrow-left"></i>&nbsp;Login</a></li>
-                <li><a class="dropdown-item"  > <i class="bi bi-box-arrow-right"></i>&nbsp;Log Out</a></li>
+                <li   *ngIf="loginToggleButton"><a routerLink="/login"    class="dropdown-item" > <i class="bi bi-box-arrow-left"></i>&nbsp;Login</a></li>
+                <li *ngIf="logoutToggleButton"><a class="dropdown-item"  (click)="logout()"> <i class="bi bi-box-arrow-right"></i>&nbsp;Log Out</a></li>
                 
           
                 <li><a></a></li>  

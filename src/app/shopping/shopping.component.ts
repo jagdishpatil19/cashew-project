@@ -14,7 +14,7 @@ export class ShoppingComponent {
 
 loginGetData:any[]=[]
 id:any;
- loginToggle:boolean=false
+loginToggle:boolean=false
 
 
   latestProduct:any=[
@@ -74,10 +74,17 @@ id:any;
   ]
 
 ngOnInit(){
-  this.loginGetData= this.apiCall.loginSuccessData
-  this.id=this.loginGetData.length
-  console.log(this.id,"this is login data")
+const loggedDataFromLocal= localStorage.getItem('loggedDataStore') // data get from local storage
+ if(loggedDataFromLocal){
+  this.loginGetData.push(loggedDataFromLocal) //local storage data push in applicaton
+  this.id=this.loginGetData.length // get length for loginGetData
+  console.log(this.loginGetData,'this is local storage data');
+   console.log(this.id,"this is login data")
   
+
+ }
+
+
 }
 
   producDetails(product:any){

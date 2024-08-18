@@ -37,8 +37,13 @@ formLoad(){
 log:any[]=[]
 submit(){
   if(this.storeLoginData.userName==this.loginForm.get('userName')?.value && this.storeLoginData.password==this.loginForm.get('password')?.value){
+    this.log.push(this.loginForm.value)
+    // this.apiCall.loginSuccessData=this.log
+    localStorage.setItem('loggedDataStore',JSON.stringify(this.log))
+
     this.loginSucessPopUp=true
-    this.loginFormHide=false
+    this.loginFormHide=false 
+
     setTimeout(()=>{
       this.router.navigateByUrl('shopping')
     },2000)
@@ -50,8 +55,6 @@ submit(){
       this.loginError=false
     },5000)
   }
- this.log.push(this.loginForm.value)
-this.apiCall.loginSuccessData=this.log
-   
+
 }
 }
