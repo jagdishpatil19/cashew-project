@@ -79,7 +79,8 @@ export class ShoppingComponent {
  }
  
   producDetails(product:any){
-  this.productService.getProduct=product 
+  // this.productService.getProduct=product 
+  localStorage.setItem('productDetails',JSON.stringify(product))
  this.router.navigateByUrl('product-detail')
   }
 
@@ -123,4 +124,10 @@ this.addCartCount=this.addDataStoreInUser.length
 
   }
   
+
+  ngOnDestroy(){
+    if(this.addCartCount==0){
+      localStorage.removeItem('addCartItem')
+    }
+  }
 }

@@ -19,7 +19,9 @@ export class LoginComponent {
   loginSucessPopUp:boolean=false
  loginFormHide:boolean=true
  loginError:boolean=false
+ path:any;
 ngOnInit(){
+  this.path= this.apiCall.loginPath //get path to which component load after login
   this.storeLoginData=this.apiCall.loginData
 this.formLoad()
 
@@ -45,7 +47,7 @@ submit(){
     this.loginFormHide=false 
 
     setTimeout(()=>{
-      this.router.navigateByUrl('shopping')
+      this.router.navigateByUrl(this.path)
     },2000)
 
   }

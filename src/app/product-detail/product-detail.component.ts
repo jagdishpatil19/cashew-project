@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductDetailsService } from '../services/product-details.service';
 import { Router } from '@angular/router';
+import { ApiCallService } from '../services/api-call.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,28 +10,30 @@ import { Router } from '@angular/router';
 })
 export class ProductDetailComponent {
 
-constructor(private productService:ProductDetailsService ,private router:Router){}
+constructor(private productService:ProductDetailsService ,private router:Router,private apiCall:ApiCallService){}
 
  productDataStore:any=[ ]
 productImg:any;
 productPrize:any;
-emptyProductHide:boolean=false
+emptyProductHide:boolean=true
 // login true or false chack or popup notification
 loginGetData:any[]=[]
 id:any;
 loginToggle:boolean=false
 
   ngOnInit(){
-    this.productDataStore.push(this.productService.getProduct)
-    console.log(this.productDataStore,'this is store')
-    this.productDataStore.filter((ele:any)=>{
-    this.productImg=ele.productImage.img1
-    this.productPrize=ele.productCost
-    })
-    if(this.productDataStore.length==1){
-      this.emptyProductHide=true
-    }
-    // get login data from local storage
+       // this.productDataStore.push(this.productService.getProduct)
+       const products=localStorage.getItem('productDetails')
+       if(products!==null){
+         this.productDataStore.push(JSON.parse(products))
+
+         this.productDataStore.filter((ele:any)=>{
+         this.productImg=ele.productImage.img1
+         this.productPrize=ele.productCost
+         })
+   
+         }
+   
     const loggedDataFromLocal= localStorage.getItem('loggedDataStore') // data get from local storage
  if(loggedDataFromLocal){
   this.loginGetData.push(loggedDataFromLocal) //local storage data push in applicaton
@@ -66,7 +69,8 @@ else{
 cancleButton(){
   this.loginToggle=false
 }
-loginButton(){
+loginButton(path:any){
+  this.apiCall.loginPath=path
   this.router.navigateByUrl('login')
     }
   

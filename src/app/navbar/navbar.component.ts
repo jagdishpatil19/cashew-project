@@ -59,7 +59,11 @@ export class NavbarComponent {
     this.searchData.emit(value)
   
   }
-
+//this is login path send to apiCall services proceess
+  login(path:any){
+    this.apiCall.loginPath=path
+  }
+  
   //this is logout proceess
   logout(){
    localStorage.removeItem('loggedDataStore')
