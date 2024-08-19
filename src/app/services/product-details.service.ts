@@ -8,4 +8,6 @@ export class ProductDetailsService {
   constructor() { }
  
   getProduct:any;
+ 
+  cartCountData:any;
 }

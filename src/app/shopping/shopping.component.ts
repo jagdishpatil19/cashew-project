@@ -10,13 +10,11 @@ import { ApiCallService } from '../services/api-call.service';
   styleUrls: ['./shopping.component.scss']
 })
 export class ShoppingComponent {
- constructor(private router:Router , private apiCall:ApiCallService, private productService:ProductDetailsService){}
-
-loginGetData:any[]=[]
-id:any;
-loginToggle:boolean=false
+ constructor(private router:Router ,  private productService:ProductDetailsService){}
 
 
+ addToCartClass:any='add-to-cart'
+ addDataStoreInUser:any[]=[] // add cart data store and local storage data aslo added
   latestProduct:any=[
     {productName:'Cashewbruch ',
       productImage:{img1:'/assets/product1.webp',img2:'/assets/cashewbruchno12.webp',img3:'/assets/cashewbruchno13.webp',img4:'/assets/cashewbruchno14.webp'},
@@ -72,21 +70,14 @@ loginToggle:boolean=false
       id:7
     },
   ]
-
-ngOnInit(){
-const loggedDataFromLocal= localStorage.getItem('loggedDataStore') // data get from local storage
- if(loggedDataFromLocal){
-  this.loginGetData.push(loggedDataFromLocal) //local storage data push in applicaton
-  this.id=this.loginGetData.length // get length for loginGetData
-  console.log(this.loginGetData,'this is local storage data');
-   console.log(this.id,"this is login data")
-  
-
+ ngOnInit(){
+ const localAddData=(localStorage.getItem('addCartItem'))
+ if(localAddData!==null){
+  this.addDataStoreInUser=JSON.parse(localAddData)
+  this.addCartCount=this.addDataStoreInUser.length // cartData length store and send on navbar cart ietm
  }
-
-
-}
-
+ }
+ 
   producDetails(product:any){
   this.productService.getProduct=product 
  this.router.navigateByUrl('product-detail')
@@ -95,37 +86,41 @@ const loggedDataFromLocal= localStorage.getItem('loggedDataStore') // data get f
   //addcart button
 
  
-  addToCart(){
-    if(this.id==1){
+  addButtonAnimation(alldeatils?:any){
       document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', e => {
             button.classList.toggle('added');
-        });
-    }); 
+          });
+
+        }); 
+        
+        console.log(alldeatils)
+      }
     
-  }
-  
-  else{
-    this.loginToggle=true
-  }
 
   
-  }
-
-  // login popup toggle 
-  cancleButton(){
-    this.loginToggle=false
-  }
-
-  loginButton(){
-this.router.navigateByUrl('login')
-  }
-
   // searching proceess 
 
   searchData:any=''
   getSearchData(searchValue:any){
 this.searchData=searchValue
   }
- 
+
+
+  //add to cart in local storage
+  
+ addCartCount:any=0 //this is send on navbar cartIcon for counting
+ sendAddCartCount(){
+
+ }
+  addCart(button: HTMLButtonElement ,product?:any) {
+    button.classList.add('clicked');
+this.addDataStoreInUser.push(product)
+
+   localStorage.setItem('addCartItem',JSON.stringify(this.addDataStoreInUser))
+  
+this.addCartCount=this.addDataStoreInUser.length
+
+  }
+  
 }

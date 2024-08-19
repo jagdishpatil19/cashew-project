@@ -19,6 +19,7 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { FooterComponent } from './footer/footer.component';
  
+ 
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { FooterComponent } from './footer/footer.component';
     ProductDetailComponent,
     ProductDisplayComponent,
     FooterComponent,
+  
  
   ],
   imports: [

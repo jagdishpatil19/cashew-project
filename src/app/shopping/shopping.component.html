@@ -1,4 +1,4 @@
-<app-navbar (searchData)="getSearchData($event)"></app-navbar>
+<app-navbar (searchData)="getSearchData($event)" [cartCount]="addCartCount" ></app-navbar>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,20 +44,16 @@
             </div>
             <p><b>{{products.productCost|currency:'INR'}} </b>/ {{products.productWeight.first}}</p>
             <p>{{products.productFlavour}}</p>
-             <p>
-                <button  (click)="addToCart()" class="add-to-cart">
-                    <div class="default">Add to cart</div>
-                    <div  class="success">Added</div>
-                    <div class="cart">
-                        <div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <div class="dots"></div>
-                </button>
-
-                 </p>
+           
+                <div class="cart-container">
+                    <button class="cart-button" (click)="addCart(button,products)" #button>
+                      <i class="fa fa-shopping-cart"></i>
+                      <i class="fa fa-box"></i>
+                      <span class="add-to-cart">Add to Cart</span>
+                      <span class="added">Added</span>
+                    </button>
+                  </div>
+            
         </div>
 
  
@@ -398,19 +394,4 @@
 <!----------Js for togle Menu-->
 
 
-<!-- this is login popup toggle -->
-<div *ngIf="loginToggle" class="popup">
-    <div class="modal-action__container modal-action--delete">  
-        <div class="modal-action__content">
-          <div class="modal-action__body">
-            Please Login Your Account  
-
-          </div>
-          <div class="modal-action__footer">
-            <button (click)="cancleButton()" type="button"class="btn btn-cancel button" ng-click="deletePanelCancelled()"> Cancel</button>
-            <button (click)="loginButton()" type="button"class="btn btn-delete button" ng-click="deletePanelConfirmed()"> Login
-            </button>
-          </div>
-        <div>
-      </div>
-</div>
+ 

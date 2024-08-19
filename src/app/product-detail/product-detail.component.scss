@@ -148,3 +148,92 @@ background-color: rgb(0, 200, 255);
   
   .tooltip-inner {
     padding: 1.3em; }
+
+
+    // thi sis login popUp notification
+    /* Center & dribbble */
+ 
+
+ .popup {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: url('http://lorempizza.com/1500/1000/') no-repeat center center fixed;
+  width: 100%;
+  height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* -------------------------------- */
+
+
+
+
+// Delete confirmation panel - Dashboard
+.modal-action {
+  &__container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 10000;
+    background: rgba(0,0,0,0.8);
+  }
+
+  &__content {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    color: rgba(0,0,0,0.8);
+  }
+
+  &__body {
+    position: relative;
+    text-align: center;
+    line-height: 1.5;
+    padding: 28px 40px;
+  }
+
+  &__footer {
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+    text-align: center;
+    border-top: none;
+
+    .button {
+      display: block;
+      float: left;
+      width: 50%;
+      text-align: center;
+      padding: 8px 0;
+      margin: 0;
+      border-radius: 0;
+      font-weight: bold;
+      transition: all 0.1s ease-out;
+    }
+      .btn-cancel {
+        background: #EFEFEF;
+        color: rgba(0,0,0,0.4);
+        &:hover {
+          color: rgba(0,0,0,0.8);
+        }
+      }
+      .btn-delete {
+        background:rgba(1, 174, 255, 0.982);
+        color: #000000;
+        &:hover {
+          background: #00fffb;
+        }
+      }
+    
+  }
+
+}
