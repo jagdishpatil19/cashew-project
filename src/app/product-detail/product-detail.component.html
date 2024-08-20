@@ -42,17 +42,18 @@
                        <h2 class="price"><span >{{discountProductPrize| currency:'INR'}}</span>&nbsp; <span><del style="color: gray; font-size: 15px;">{{orignalPrice|currency:'INR'}}</del></span>&nbsp; <span style="color: green; font-size: 20px;">{{product.discount}}% Off</span></h2> 
 						
 						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-						<h5 class="sizes">Weight:
-							<button aria-selected="true" (click)="selectWeight(product.productCost, product.productCost-(( product.productCost*product.discount)/100),1)"  class="size" data-toggle="tooltip" title="small">{{product.productWeight.first}}</button>
-							<button aria-selected="false" (click)="selectWeight(product.productCost,product.productCost-((product.productCost*product.discount)/100),2)" class="size" data-toggle="tooltip" title="small">{{product.productWeight.second}}</button>
-							<button aria-selected="false" (click)="selectWeight(product.productCost,product.productCost-((product.productCost*product.discount)/100),4)" class="size" data-toggle="tooltip" title="small">{{product.productWeight.third}}</button>
+						<span class="sizes" style="text-transform: capitalize;"> Select Weight:</span>
+							<div style="position: relative; bottom: 34px; left: 130px;" >
+							<input type="radio" name="Weight" style="margin-left: 0px;" checked (click)="selectWeight(product.productCost, product.productCost-(( product.productCost*product.discount)/100),1 ,'500gm')"  class="size" data-toggle="tooltip" title="small"><label style="margin-right: 5px;">{{product.productWeight.first}}</label><br>
+							<input type="radio" name="Weight"  (click)="selectWeight(product.productCost,product.productCost-((product.productCost*product.discount)/100),2,'1kg')" class="size" data-toggle="tooltip" title="small"><label >{{product.productWeight.second}}</label> <br>
+							<input type="radio" name="Weight"  (click)="selectWeight(product.productCost,product.productCost-((product.productCost*product.discount)/100),4,'2kg')" class="size" data-toggle="tooltip" title="small"><label >{{product.productWeight.third}} </label>
  
-						</h5>
+							</div>
 					 
 						<div class="action mb-4">
 							<button class="add-to-cart btn btn-default my-4 mx-4" type="button">add to cart</button>
 							 
-							<button style="width: 150px;" class="add-to-cart btn btn-default mx-4  " type="button" (click)="buyProduct()"> Buy <i class="bi bi-bag-dash-fill"></i></button>
+							<button style="width: 150px;" class="add-to-cart btn btn-default mx-4  " type="button" (click)="buyProduct(product)"> Buy <i class="bi bi-bag-dash-fill"></i></button>
 						</div>
 						<div class="action">
 						 

@@ -17,6 +17,8 @@ productImg:any;
 discountProductPrize:any;
 orignalPrice:any;
 emptyProductHide:boolean=true
+WeigthStore:any='500gm'
+multiplication:any=1 //for weight check
 // login true or false chack or popup notification
 loginGetData:any[]=[]
 id:any;
@@ -47,12 +49,14 @@ loginToggle:boolean=false
  }
   }
 
-  selectWeight(orignal:any,offer:any,multiplication:number){
+  selectWeight(orignal:any,offer:any,multiply:number,Weigth:any){
 //orignal price show
-this.orignalPrice=orignal*multiplication
+this.orignalPrice=orignal*multiply
     // discount logic apply
-    this.discountProductPrize=offer*multiplication
-   
+    this.discountProductPrize=offer*multiply 
+  this.WeigthStore=Weigth // get weight from user on button 
+  this.multiplication=multiply
+  
     
   }
   imageDisplay(images:any){
@@ -61,9 +65,16 @@ this.orignalPrice=orignal*multiplication
 
   // this is for login popUp notification
 
-buyProduct(){
+buyProduct(product:any){
+let orderSummrayData=product
+ orderSummrayData.discountedPrice=this.discountProductPrize // discounted price add in product object on local storage 
+ orderSummrayData.Weigth=this.WeigthStore
+ orderSummrayData.multiply=this.multiplication
+localStorage.setItem('orderSummary',JSON.stringify(orderSummrayData))
+
 if(this.id==1){
   this.router.navigateByUrl('buy')
+
 }
 
 else{
