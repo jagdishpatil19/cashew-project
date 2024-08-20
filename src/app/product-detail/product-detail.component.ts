@@ -14,7 +14,8 @@ constructor(private productService:ProductDetailsService ,private router:Router,
 
  productDataStore:any=[ ]
 productImg:any;
-productPrize:any;
+discountProductPrize:any;
+orignalPrice:any;
 emptyProductHide:boolean=true
 // login true or false chack or popup notification
 loginGetData:any[]=[]
@@ -29,7 +30,8 @@ loginToggle:boolean=false
 
          this.productDataStore.filter((ele:any)=>{
          this.productImg=ele.productImage.img1
-         this.productPrize=ele.productCost
+         this.orignalPrice=ele.productCost
+         this.discountProductPrize=ele.productCost-((ele.productCost*ele.discount)/100) //discpount logic apply
          })
    
          }
@@ -45,9 +47,12 @@ loginToggle:boolean=false
  }
   }
 
-  selectWeight(prize:any,multiplication:number){
-    this.productPrize=prize*multiplication
-    console.log(prize,'and ',multiplication  );
+  selectWeight(orignal:any,offer:any,multiplication:number){
+//orignal price show
+this.orignalPrice=orignal*multiplication
+    // discount logic apply
+    this.discountProductPrize=offer*multiplication
+   
     
   }
   imageDisplay(images:any){

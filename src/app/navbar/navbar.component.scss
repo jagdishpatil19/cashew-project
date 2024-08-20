@@ -100,11 +100,12 @@ a{
     display: inline-block;
     width: 100px;
     height: 50px;
-    background:  transparent url('https://res.cloudinary.com/ajayrawat/image/upload/v1508734485/logo_zdwi2d.svg') no-repeat;
+    background:  transparent url('/assets/online shopping logo.png') no-repeat;
     background-size: contain;
     margin-right: 15px;
+    margin-left: -50px;
     vertical-align: middle;
-    
+    scale: 1.2;
     
   }
 
@@ -368,8 +369,8 @@ a{
     &__hamburger {
       display: block;
       margin-top: -15px;
-    
-      scale:0.8;
+    margin-left:0px;
+      scale:1.1;
     }
 
     &__search {

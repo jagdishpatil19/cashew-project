@@ -90,10 +90,11 @@ background-color: rgb(0, 200, 255);
   
   .product-title, .price, .sizes, .colors {
     text-transform: UPPERCASE;
+    
     font-weight: bold; }
   
   .checked, .price span {
-    color: #ff9f1a; }
+    color: #ff0000; }
   
   .product-title, .rating, .product-description, .price, .vote, .sizes {
     margin-bottom: 15px; }
@@ -149,7 +150,7 @@ background-color: rgb(0, 200, 255);
   .tooltip-inner {
     padding: 1.3em; }
 
-
+ 
     // thi sis login popUp notification
     /* Center & dribbble */
  

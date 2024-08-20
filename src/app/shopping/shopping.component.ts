@@ -13,7 +13,7 @@ export class ShoppingComponent {
  constructor(private router:Router ,  private productService:ProductDetailsService){}
 
 
- addToCartClass:any='add-to-cart'
+ 
  addDataStoreInUser:any[]=[] // add cart data store and local storage data aslo added
   latestProduct:any=[
     {productName:'Cashewbruch ',
@@ -21,6 +21,7 @@ export class ShoppingComponent {
       productCost:352,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Unflavoured",
+      discount:10,
       id:1
     },
     {productName:'Cashewkerne',
@@ -28,6 +29,7 @@ export class ShoppingComponent {
       productCost:300,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Unflavoured",
+      discount:12,
       id:2
     },
     {productName:'Cashewbruch - afrikanischer',
@@ -35,6 +37,7 @@ export class ShoppingComponent {
       productCost:310,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Unflavoured",
+      discount:20,
       id:3
     },
     {productName:'Cashew Vanille',
@@ -42,6 +45,7 @@ export class ShoppingComponent {
       productCost:400,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Flavoured",
+      discount:12,
       id:4
     },
     {productName:'Kakao Cashews',
@@ -50,7 +54,7 @@ export class ShoppingComponent {
       productCost:380,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Flavoured",
-
+      discount:20,
       id:5
     },
     {productName:'Premium Cashewkernmehl',
@@ -59,6 +63,7 @@ export class ShoppingComponent {
       productCost:362,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Flavoured",
+      discount:22,
       id:6
     },
     {productName:'Cashew Curry - Masala',
@@ -67,7 +72,49 @@ export class ShoppingComponent {
       productCost:352,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Flavoured",
+      discount:10,
       id:7
+    },
+    {productName:'Cashewbruch ',
+      productImage:{img1:'/assets/product1.webp',img2:'/assets/cashewbruchno12.webp',img3:'/assets/cashewbruchno13.webp',img4:'/assets/cashewbruchno14.webp'},
+      productCost:352,
+      productWeight:{first:"500gm",second:'1kg',third:'2kg'},
+      productFlavour:"Unflavoured",
+      discount:10,
+      id:8
+    },
+    {productName:'Cashewkerne',
+      productImage:{img1:'/assets/product2.webp',img2:'/assets/CashewKerne21.webp',img3:'/assets/CashewKerne22.webp',img4:'/assets/CashewKerne23.webp'},
+      productCost:300,
+      productWeight:{first:"500gm",second:'1kg',third:'2kg'},
+      productFlavour:"Unflavoured",
+      discount:12,
+      id:9
+    },
+    {productName:'Cashewbruch - afrikanischer',
+      productImage:{img1:'assets/product3.webp',img2:'/assets/Cashewbruch31.webp',img3:'/assets/Cashewbruch32.webp',img4:'/assets/Cashewbruch33.webp'},
+      productCost:310,
+      productWeight:{first:"500gm",second:'1kg',third:'2kg'},
+      productFlavour:"Unflavoured",
+      discount:20,
+      id:10
+    },
+    {productName:'Cashew Vanille',
+      productImage:{img1:'/assets/flavour2.webp',img2:'/assets/vanille41.webp'},
+      productCost:400,
+      productWeight:{first:"500gm",second:'1kg',third:'2kg'},
+      productFlavour:"Flavoured",
+      discount:12,
+      id:11
+    },
+    {productName:'Kakao Cashews',
+ 
+      productImage:{img1:'/assets/flavour3.webp',img2:'/assets/kakao51.webp',img3:'/assets/kakao52.webp' },
+      productCost:380,
+      productWeight:{first:"500gm",second:'1kg',third:'2kg'},
+      productFlavour:"Flavoured",
+      discount:20,
+      id:12
     },
   ]
  ngOnInit(){
