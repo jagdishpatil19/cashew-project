@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buy-page',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./buy-page.component.scss']
 })
 export class BuyPageComponent {
+ 
+  constructor(private router:Router){}
 
 orderSummaryData:any[]=[]
 tax:any=0
@@ -27,5 +30,12 @@ id:any
  this.total=ele.discountedPrice+this.shippingCharge+this.tax //total all discount shipping charges and tax
  this.id=ele.id
  })
+  }
+  orderShippingToggle:boolean=false
+  orderPlaced(){
+    this.orderShippingToggle=true
+    setTimeout(()=>{
+      this.router.navigateByUrl('compltet-order')
+    },9000)
   }
 }

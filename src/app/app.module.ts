@@ -18,6 +18,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ShoppingComponent } from './shopping/shopping.component';
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { FooterComponent } from './footer/footer.component';
+import { CompleteOrderComponent } from './complete-order/complete-order.component';
  
  
 
@@ -38,6 +39,7 @@ import { FooterComponent } from './footer/footer.component';
     ProductDetailComponent,
     ProductDisplayComponent,
     FooterComponent,
+    CompleteOrderComponent,
   
  
   ],

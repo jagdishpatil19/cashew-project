@@ -284,12 +284,12 @@
  
              <div class="row my-4">
                  <div class="col">
-                     <a href="ecommerce-products.html" class="btn btn-link text-muted">
-                         <i class="mdi mdi-arrow-left me-1" routerLink="/shopping"></i> Continue Shopping </a>
+                     <a  class="btn btn-link text-muted">
+                         <i routerLink="/shopping" class="mdi mdi-arrow-left me-1" ></i> Continue Shopping </a>
                  </div> <!-- end col -->
                  <div class="col">
                      <div class="text-end mt-2 mt-sm-0">
-                         <a   class="btn btn-success">
+                         <a (click)="orderPlaced()"  class="btn btn-success">
                              <i class="mdi mdi-cart-outline me-1"></i> Procced </a>
                      </div>
                  </div> <!-- end col -->
@@ -298,5 +298,18 @@
        
      </div>
      <!-- end row -->
+
+
+    </div >
+    
+    <!-- order place toggle image set -->
+ <div *ngIf="orderShippingToggle" class="popup">
+    <div class="modal-action__container modal-action--delete">  
+        <div class="modal-action__content">
+          
+            <img class="truck" src="/assets/Order-Button-to-Top-Down-View-Delivery-Truck-on-Road-Animation.gif" height="150px" alt="">
+
+          
      
- </div>
+      </div>
+</div>

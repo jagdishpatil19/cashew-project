@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
  
 import { ProductDetailsService } from '../services/product-details.service';
-import { ApiCallService } from '../services/api-call.service';
+ 
 
 @Component({
   selector: 'app-shopping',
@@ -33,7 +33,7 @@ export class ShoppingComponent {
       id:2
     },
     {productName:'Cashewbruch - afrikanischer',
-      productImage:{img1:'assets/product3.webp',img2:'/assets/Cashewbruch31.webp',img3:'/assets/Cashewbruch32.webp',img4:'/assets/Cashewbruch33.webp'},
+      productImage:{img1:'/assets/Cashewbruch31.webp',img2:'assets/product3.webp',img3:'/assets/Cashewbruch32.webp',img4:'/assets/Cashewbruch33.webp'},
       productCost:310,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Unflavoured",
@@ -91,8 +91,8 @@ export class ShoppingComponent {
       discount:12,
       id:9
     },
-    {productName:'Cashewbruch - afrikanischer',
-      productImage:{img1:'assets/product3.webp',img2:'/assets/Cashewbruch31.webp',img3:'/assets/Cashewbruch32.webp',img4:'/assets/Cashewbruch33.webp'},
+    {productName:'SeldeMer',
+      productImage:{img1:'/assets/SeldeMer1.webp',img2:'/assets/Cashewbruch31.webp',img3:'/assets/Cashewbruch32.webp',img4:'/assets/Cashewbruch33.webp'},
       productCost:310,
       productWeight:{first:"500gm",second:'1kg',third:'2kg'},
       productFlavour:"Unflavoured",
