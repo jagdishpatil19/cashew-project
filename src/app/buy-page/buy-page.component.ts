@@ -17,6 +17,7 @@ subTotal:any;
 discount:any;
 total:any
 id:any
+quantity:any
   ngOnInit(){
    const orderData=localStorage.getItem('orderSummary') 
    if(orderData!==null){
@@ -27,8 +28,9 @@ id:any
  this.orderSummaryData.filter((ele:any)=>{
   this.subTotal=ele.productCost*ele.multiply // sub total show only product cost
  this.discount=Math.ceil(this.subTotal-ele.discountedPrice)
- this.total=ele.discountedPrice+this.shippingCharge+this.tax //total all discount shipping charges and tax
+ this.total=(ele.discountedPrice+this.shippingCharge+this.tax)*ele.quantity //total all discount shipping charges and tax
  this.id=ele.id
+ this.quantity=ele.quantity
  })
   }
   orderShippingToggle:boolean=false
